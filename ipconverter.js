@@ -35,6 +35,12 @@ class IP {
         })
       return binary.join('.');
     }
+
+    static 
+
+    getMaskDec(){
+        let 
+    }
     
 }
 
@@ -48,6 +54,20 @@ $("#calc_btn").on("click", function(e){
     ip = $("#ip").val();
     pref = $('#pref').val();
     nsub = $('#nsub').val();
+
+    let nbith = 0;
+    let i = 0;
+
+    while (nbith < nsub) {
+        nbith = math.pow(2,i);
+        i++;
+    }
+
+    let nbitSubr = 0;
+    nbitSubr = (32-nsub)-nbith;
+
+    let newPref = pref + nbitSubr;
+
 
     let ipObj = new IP(ip, pref);
 
